@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/2.png";
 
 const Hero = () => {
   return (

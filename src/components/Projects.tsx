@@ -9,7 +9,7 @@ const Projects = () => {
       subtitle: "(Frontend)",
       description: "UI for Rajasthan's demographic data, Google Highcharts for stats, Leaflet.js maps.",
       technologies: ["React.js", "Google Highcharts", "Leaflet.js", "CSS"],
-      link: "#",
+      link: "https://rajashtanfoundation.netlify.app/",
       type: "Frontend"
     },
     {
@@ -17,7 +17,7 @@ const Projects = () => {
       subtitle: "(Zaika Foods)",
       description: "REST APIs (cart/order/user), JWT Auth, Stripe payments, real-time order verification.",
       technologies: ["MERN Stack", "JWT", "Stripe", "REST APIs"],
-      link: "#",
+      link: "https://food-deliver-webapp.netlify.app/",
       type: "Full Stack"
     }
   ];
