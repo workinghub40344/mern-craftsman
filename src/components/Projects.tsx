@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Globe, Code } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const projects = [
@@ -24,18 +25,36 @@ const Projects = () => {
   return (
     <section className="py-20 bg-secondary/20" id="projects">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-foreground">
+        <motion.h2 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold text-center mb-8 text-foreground"
+        >
           Featured <span className="text-tech-blue">Projects</span>
-        </h2>
-        <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
+        </motion.h2>
+        
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto"
+        >
           Showcasing my expertise in MERN Stack development through real-world applications
-        </p>
+        </motion.p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="group bg-card rounded-xl p-8 shadow-card border border-border hover:border-tech-blue/50 hover:shadow-glow transition-all duration-500 transform hover:-translate-y-2"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02, y: -10 }}
+              className="group bg-card rounded-xl p-8 shadow-card border border-border hover:border-tech-blue/50 hover:shadow-glow transition-all duration-500"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
@@ -78,23 +97,34 @@ const Projects = () => {
                 ))}
               </div>
               
-              <Button 
-                className="w-full bg-tech-blue hover:bg-tech-blue/90 text-white font-medium group-hover:shadow-glow transition-all duration-300"
-                onClick={() => window.open(project.link, '_blank')}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Project
-              </Button>
-            </div>
+                <Button 
+                  className="w-full bg-tech-blue hover:bg-tech-blue/90 text-white font-medium group-hover:shadow-glow transition-all duration-300"
+                  onClick={() => window.open(project.link, '_blank')}
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Project
+                </Button>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
         
-        <div className="text-center mt-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
           <p className="text-muted-foreground text-lg">
             More projects coming soon! Follow my journey in 
             <span className="text-tech-blue font-semibold"> MERN Stack</span> development.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
